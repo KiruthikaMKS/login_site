@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+{% if registered %}
+<h1>Thanks for being here..</h1>
+{% else %}
+<h1>sign up here</h1>
+<form enctype="multipart/form-data" method="post">
+  <table>
+    {{user_form.as_table}}
+    {{profile_form.as_table}}
+    {% csrf_token %}
+  </table>
+  <input type="submit" name="" value="sign up">
+</form>
+{% endif %}
+{% endblock %}
